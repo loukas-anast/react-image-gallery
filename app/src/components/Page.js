@@ -5,6 +5,7 @@ import PhotoList from './PhotoList';
 import Navigation from './Navigation';
 import SearchForm from './SearchForm';
 
+// Page component, first decides if search
 const Page = ({title, currentPage, getPhotos, changePageName, history, photos, fetchPhotos}) => {
 
   if((title !== currentPage) && title !== "Search") {

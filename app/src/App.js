@@ -10,6 +10,7 @@ import './App.css';
 import apiKey from './config';
 
 class App extends Component {
+    //Constructor function for App class
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +18,7 @@ class App extends Component {
       currentPage: ""
     }
   }
-
+    //Desides between search or recent photos
   getPhotosForPage(currentPage, title) {
     if((currentPage !== title) && title !== "Search") {
       if(title === "Home") {
@@ -27,7 +28,8 @@ class App extends Component {
       }
     }
   }
-
+    
+    //Fetches recent Photos
   getRecentPhotos() {
     axios.get('https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=' + apiKey + '&format=json&nojsoncallback=1')
     .then(result => {
@@ -38,7 +40,8 @@ class App extends Component {
       console.log("Error occured while fetching data from Flickr: " + error.message);
     });
   }
-
+    
+    //Performs search, fetches Photos
   performSearch(term) {
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${term}&format=json&nojsoncallback=1`)
       .then(result => {
@@ -49,11 +52,13 @@ class App extends Component {
         console.log("Error occured while fetching data from Flickr: " + error.message);
       });
   }
-
+    
+    //Sets the name of the page
   changePageName(currentPage) {
       this.setState({currentPage});
   }
-
+    
+    //Renders markup for App class
   render() {
     return (
       <BrowserRouter basename="/react-flickr-gallery">

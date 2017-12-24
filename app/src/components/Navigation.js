@@ -1,7 +1,7 @@
 import React from 'react';
 import NavItem from './NavItem';
 
-
+// Navigation component as function
 const Navigation = (props) => (
   <nav className="main-nav">
     <ul>

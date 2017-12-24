@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Not found component
 const NotFound = (props) => (
   <li className="not-found">
     <h3>No Results Found</h3>

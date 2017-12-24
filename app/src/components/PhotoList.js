@@ -2,6 +2,7 @@ import React from 'react';
 import NotFound from './NotFound';
 import PhotoItem from './PhotoItem';
 
+//Photolist component first maps photos to PhotoItem
 const PhotoList = ({photos}) => {
 
   let photoItems = photos.map(photo => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 class SearchForm extends React.Component {
-
+    //Constructor function for SearchForm class
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -10,7 +10,8 @@ class SearchForm extends React.Component {
       console.log("history doesn't exist");
     }
   }
-
+    
+    //Event handler for submit event
   handleSubmit = (e) => {
     e.preventDefault();
     let path = `/search?q=${this.query.value}`;
@@ -18,7 +19,8 @@ class SearchForm extends React.Component {
     e.currentTarget.reset();
     this.props.history.push(path);
   }
-
+  
+  //Renders SearchForm markup
   render(){
     return(
       <form className="search-form" onSubmit={this.handleSubmit}>
