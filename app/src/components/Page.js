@@ -15,7 +15,7 @@ const Page = ({title, currentPage, getPhotos, changePageName, history, photos, f
 
   return(
     <div className="container">
-      <SearchForm history={history} onSearch={term => fetchPhotos(term)}/>
+      {title === "Search" ? <SearchForm history={history} onSearch={term => fetchPhotos(term)}/> : ''}
       <Navigation/>
       <div className="photo-container">
         { title !== "Search" && <h2>{title}</h2>}
